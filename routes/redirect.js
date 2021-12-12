@@ -16,8 +16,9 @@ redirectRouter
       if (url) {
         const cpu = await si.cpu();
         const data = {
-          date: new Date().toLocaleTimeString(),
           _id: uuidv4(),
+          date: new Date().toLocaleDateString(),
+          time: new Date().toLocaleTimeString(),
           manufacturer: cpu.manufacturer,
           brand: cpu.brand,
           model: cpu.model,
@@ -26,7 +27,6 @@ redirectRouter
           cores: cpu.cores,
           socket: cpu.socket
         }
-        // const stats = 
         await Url.updateOne(
           {
             urlCode: req.params.id,

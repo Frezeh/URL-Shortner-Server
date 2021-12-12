@@ -34,7 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use(cors());
 app.use('/url', urlRouter);
-app.use('/redirect', redirectRouter);
+app.use('/', redirectRouter);
 app.use('/history', historyRouter);
 
 // catch 404 and forward to error handler

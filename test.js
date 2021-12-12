@@ -30,7 +30,7 @@ describe("Testing GET on /redirect ", () => {
   it("It should redirect the short url to the long url at all times", (done) => {
     chai
       .request(app)
-      .get("/redirect/t77xaCxMQ")
+      .get("/t77xaCxMQ")
       .end((err, res) => {
         res.should.have.status(200);
         done();
